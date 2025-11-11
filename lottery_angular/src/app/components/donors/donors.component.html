@@ -1,0 +1,124 @@
+<div class="card">
+    <p-toast />
+    <p-toolbar styleClass="mb-6">
+        <ng-template #start>
+            <p-button label="New" icon="pi pi-plus" class="mr-2" (onClick)="openNew()" />
+        </ng-template>
+
+        <ng-template #end>
+            <p-button label="Export" icon="pi pi-upload" severity="secondary" (onClick)="exportCSV()" />
+        </ng-template>
+    </p-toolbar>
+
+    <p-table #dt [value]="donors" [rows]="10" [columns]="cols" [paginator]="true"
+        [globalFilterFields]="['Name']"
+        [tableStyle]="{ 'min-width': '75rem' }" [rowHover]="true" dataKey="id"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        <ng-template #caption>
+            <div class="flex items-center justify-between">
+                <h5 class="m-0">Manage Donors</h5>
+                <!-- <p-iconfield>
+                    <p-inputicon styleClass="pi pi-search" />
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target, 'contains')"
+                        placeholder="Search..." />
+                </p-iconfield> -->
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <tr>
+                <th></th>
+                <th pSortableColumn="id" style="min-width: 16rem">Code                    
+                    <p-sortIcon field="name" />
+                </th>
+                <th pSortableColumn="name" style="min-width:16rem">
+                    Name
+                    <p-sortIcon field="name" />
+                </th>
+                <th style="min-width: 8rem">
+                    Email
+                </th>
+                <th>Address</th>
+                <th style="min-width: 12rem"> </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-donor>
+            <tr>
+                <td style="width: 3rem">
+                </td>
+                <td style="min-width: 12rem">{{ donor.id }}</td>
+                <td style="min-width: 16rem">{{ donor.name }}</td>
+
+                <td>{{ donor.email  }}</td>
+                <td>{{ donor.address }}</td>
+                <td>
+                    <p-button icon="pi pi-spin pi-user-edit" class="mr-2" severity="success"[rounded]="true" [outlined]="true"
+                        (click)="editDonor(donor)" />
+                    <p-button icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+                        (click)="deleteDonor(donor)" />
+
+                </td>
+                    <td>
+                        <p-button  label="Get donors gifts" outlined
+                        (click)="openDonorsGifts(donor)" />
+                    </td>
+            </tr>
+        </ng-template>
+        <ng-template #summary>
+            <div class="flex items-center justify-between">In total there are {{ donors ? donors.length : 0 }} donors.
+            </div>
+        </ng-template>
+    </p-table>
+
+    <p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Donor Details" [modal]="true">
+        <ng-template #content>
+            <div class="flex flex-col gap-6">
+
+                <div>
+                    <label for="name" class="block font-bold mb-3">Name</label>
+                    <input type="text" pInputText id="name" [(ngModel)]="donor.name" required  fluid />
+                    <small class="text-red-500" *ngIf="submitted && !donor.name">Name is required.</small>
+                </div>
+                <div>
+                    <label for="email" class="block font-bold mb-3">email</label>
+                    <input type="text" pInputText id="email" [(ngModel)]="donor.email" required  fluid />
+                    <small class="text-red-500" *ngIf="submitted && !donor.email">Email is required.</small>
+                </div>
+                    <div class="col-span-6">
+                        <label for="address" class="block font-bold mb-3">Address</label>
+                        <input type="text" pInputText id="address" [(ngModel)]="donor.address" mode="currency"  fluid />
+                        <small class="text-red-500" *ngIf="submitted && !donor.address">Address is required.</small>
+                    </div>
+            </div>
+        </ng-template>
+
+        <ng-template #footer>
+            <div>{{message}}</div>
+            <p-button label="Cancel" icon="pi pi-times" text (click)="hideDialog()" />
+            <p-button  label="Save" icon="pi pi-check" (click)="saveDonors()" />
+        </ng-template>
+    </p-dialog>
+
+    <p-confirmDialog [style]="{ width: '450px' }" />
+</div>
+<p-dialog [(visible)]="donorsGifts" [style]="{ width: '36.8rem' ,height:'23rem'}" header="Donor Gifts" [modal]="true">
+     <div class="card">
+        <p-carousel [value]="filteredGifts" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+            <ng-template let-gift #item>
+                <div class="border border-surface rounded-border m-2 p-4">
+                    <div class="mb-4">
+                        <div class="relative mx-auto">
+                            <img [src]="gift.imageUrl" class="w-full rounded-border" id="pic"/>
+                        </div>
+                    </div>
+                    <h4 class="mb-4 font-medium">{{ gift.name }}</h4>
+                    <div class="flex justify-between items-center">
+                        <div class="mt-0 font-semibold text-xl">{{ '$' + gift.price }}</div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+    
+            
+</p-dialog>

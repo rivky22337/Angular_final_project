@@ -1,0 +1,44 @@
+
+html {
+  font-size: 14px;
+  font-family: "Inter var",--p-fuchsia-700, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  line-height: normal;
+}
+
+body {
+    background: var(--surface-ground);
+    color: var(--text-color);
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --p-button-primary-background:var(--p-fuchsia-600);
+    --p-button-primary-border-color:var(--p-fuchsia-600);
+    --p-button-primary-hover-background:var(--p-fuchsia-700);
+    --p-button-primary-hover-border-color:var(--p-fuchsia-700);
+    --p-button-primary-active-background:var(--p-fuchsia-700);
+    --p-button-primary-active-border-color:var(--p-fuchsia-700);
+
+    --p-button-text-primary-color:var(--p-fuchsia-600);
+    --p-button-text-primary-hover-background:var(--p-fuchsia-100);
+    --p-button-text-primary-active-background:var(--p-fuchsia-100);
+    
+    --p-datatable-header-cell-selected-background:var(--p-fuchsia-100);
+    --p-datatable-header-cell-selected-color:var(--p-fuchsia-600);
+    --p-carousel-indicator-active-background:var(--p-fuchsia-600);
+    --p-paginator-nav-button-selected-color:var(--p-fuchsia-600);
+    --p-paginator-nav-button-selected-background:var(--p-fuchsia-100);
+    --p-carousel-indicator-focus-ring-color:var(--p-fuchsia-600);
+    --p-checkbox-checked-border-color:var(--p-fuchsia-600);
+    --p-checkbox-checked-hover-border-color:var(--p-fuchsia-600);
+    --p-checkbox-checked-focus-border-color:var(--p-fuchsia-600);
+    --p-checkbox-focus-ring-color:var(--p-fuchsia-600);
+    --p-inputtext-focus-border-color:var(--p-fuchsia-600);
+    --p-badge-primary-background:var(--p-fuchsia-600);
+    --p-button-outlined-primary-border-color:var(--p-fuchsia-600);
+    --p-button-outlined-primary-color:var(--p-fuchsia-600);
+    --p-button-outlined-primary-hover-background:var(--p-fuchsia-100);
+    --p-button-outlined-primary-active-background:var(--p-fuchsia-100);
+    --p-button-icon-only-focus-background:var(--p-fuchsia-600);
+  }
+

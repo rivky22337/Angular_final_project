@@ -1,0 +1,15 @@
+<div class="card">
+     <p-menubar *ngIf="!navSrv.admin()" [model]="userItems">
+          <p-overlaybadge *ngIf="navSrv.logoutS()" value={{navSrv.cartBadge()}}   >
+               <p-button   class="custom-cart-button" icon="pi pi-shopping-cart"  [rounded]="true" severity="primary" [outlined]="true" (click)="navigate('/cart')" ></p-button>
+          </p-overlaybadge>
+          <p-button *ngIf="navSrv.logoutS()" (click)="logout()">logout</p-button>
+          <p-button *ngIf="!navSrv.logoutS()" (click)="navigate('/login')">login</p-button>
+     </p-menubar>
+
+     <p-menubar *ngIf="navSrv.admin()" [model]="adminItems">
+          <p-button *ngIf="navSrv.logoutS()" (click)="logout()">logout</p-button>
+          <p-button *ngIf="!navSrv.logoutS()" (click)="navigate('/login')">login</p-button>
+     </p-menubar>
+</div>
+<router-outlet />

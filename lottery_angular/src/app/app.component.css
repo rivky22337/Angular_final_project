@@ -1,0 +1,18 @@
+#cart{
+    font-size: x-large;
+}
+#Scart{
+    padding-right: 1rem;
+    padding-top: 3rem;
+}
+p-overlaybadge{
+  position:absolute;
+  margin-left: -4rem;
+  z-index: 2; 
+}
+.custom-cart-button {
+    --p-button-bg: #007bff; /* צבע הרקע הרגיל */
+    --p-button-hover-bg: #0056b3; /* צבע הרקע בעת hover */
+    --p-button-text-color: #fff; /* צבע הטקסט */
+    --p-button-hover-text-color: #fff; /* צבע הטקסט בעת hover */
+}

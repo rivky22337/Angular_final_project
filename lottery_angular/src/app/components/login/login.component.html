@@ -1,0 +1,27 @@
+        <form #frm="ngForm" (ngSubmit)="onSubmit(frm)" class="form">
+            <div class="form-group">
+                <input type="text" id="name"pInputText class="form-input" placeholder="username" name="username" [(ngModel)]="userName"
+                    #nameModel="ngModel" required/>
+                <div *ngIf="nameModel.invalid && nameModel.touched" class="error">
+                    <small *ngIf="nameModel.errors?.['required']">Username is requierd.</small>
+                    <small *ngIf="nameModel.errors?.['exists']">Username not exist.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <p-password [(ngModel)]="password" type="password" id="password" [feedback]="false"
+                    placeholder="password" #passwordModel="ngModel" required name="password" [toggleMask]="true" />
+                <div *ngIf="passwordModel.invalid && passwordModel.touched" class="error">
+                    <small *ngIf="passwordModel.errors?.['required']">Password is required.</small>
+                    <small *ngIf="passwordModel.errors?.['wrong']">Wrong password.</small>
+                </div>
+            </div>
+            <span style="text-align: left;font-size: small;">
+                <span>for register press </span><a href="register" style="color:#C026D3;text-decoration-line: none;">here.</a>
+            </span>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+
+
+
+

@@ -1,0 +1,34 @@
+<div class="container">
+    <i *ngIf="spinner "  class="pi pi-spin pi-spinner" id="circle"style="font-size: 43.2rem;color: #C026D3; text-align: center;opacity: 100%;"></i>
+
+<img src="lottery.jpg" id="backgound" *ngIf="spinner || button">
+<!-- <p-button *ngIf="button" icon="pi pi-play" label="start"  [rounded]="true" (click)="lottery()"  id="btn"></p-button> -->
+<p-button *ngIf="button"  label="Lets do it!" icon="pi pi-play"[rounded]="true" iconPos="bottom"(click)="lottery()"  id="btn" />
+
+</div>
+
+
+<h2 *ngIf="winners" style="text-align: center;">Emails sent to winners</h2>
+<p-table [value]="gifts" [tableStyle]="{ 'min-width': '60rem' }" *ngIf="winners">
+<ng-template #caption>
+<div class="flex items-center justify-between">
+    <span class="text-xl font-bold">The winners!</span>
+</div>
+</ng-template>
+<ng-template #header>
+<tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>winner</th>
+</tr>
+</ng-template>
+<ng-template #body let-gift>
+<tr>
+    <td>{{gift.name}}</td>
+    <td>
+        <img [src]=" gift.imageUrl" id="pic"class="w-24 rounded" />
+    </td>
+    <td>{{gift.winner}}</td>
+</tr>
+</ng-template>
+</p-table>

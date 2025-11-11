@@ -1,0 +1,44 @@
+/* .spinner{
+    margin-top: 32vh;
+    margin-left: 90vh;
+
+}
+
+.button{
+padding-top: 30vh;
+padding-left: 50rem;
+
+}
+*/
+#pic{
+  width: 8vw;
+  height: 18vh;
+  margin-left: -5vh;
+} 
+#circle{
+z-index: 1;
+transform: translate(-50%, -50%); /* מתקן את המיקום כך שהמרכז הוא נקודת האמצע של הכפתור */
+top: 2.3rem;
+left: 30rem;
+position: absolute;
+}
+.container {
+  position: relative; /* מגדיר מיקום יחסי למיכל */
+  width: 100%; /* מתאים לגודל התמונה */
+  text-align: center; /* ממרכז תוכן בתוך המיכל */
+}
+
+#backgound {
+  width: 100%; /* התמונה מותאמת לגודל המיכל */
+  display: block;
+}
+
+#btn {
+  position: absolute; 
+  border-radius: 100%;
+  top: 42.5%; /* מרכז הכפתור אנכית */
+  left: 49.75%; /* מרכז הכפתור אופקית */
+  transform: translate(-50%, -50%); /* מתקן את המיקום כך שהמרכז הוא נקודת האמצע של הכפתור */
+  z-index: 3; /* מבטיח שהכפתור יהיה מעל התמונה */
+  
+}

@@ -1,0 +1,87 @@
+.border{
+border-radius: .25rem;
+border-width: 1px;
+border-color: color-mix(in srgb, var(--p-surface-200) calc(100%* var(--tw-border-opacity, 1)), transparent);
+border-style: solid;
+padding: 15px;
+}
+
+#try{
+    width:90vw;
+    height: 28vh;
+    border-radius: .25rem;
+border-width: 1px;
+border-color: color-mix(in srgb, var(--p-surface-200) calc(100%* var(--tw-border-opacity, 1)), transparent);
+border-style: solid;
+padding: 15px;
+margin: 5vh;
+align-self: center;
+}
+#pic{
+    width: 20vw;
+    height: 20vh;
+}
+#margin{
+    margin: 40px;
+}
+#buttons{
+    height: 5vh;
+    align-self: center;
+    border-right: -10vw;
+}
+/* #price_flat{
+    margin-right: -300rem;
+    margin-top: -35%;
+} */
+#addToCart{
+    margin-left: 2rem;
+    height: 4rem;
+    margin-top: 2rem;
+}
+#text{
+    margin-top: 5rem;
+}
+
+
+
+
+
+    
+
+
+    #items{
+        align-self: center;
+        height: 5vh;
+    
+    }
+    #price_flat{
+       top:2rem; 
+    }
+    #name_falt{
+    
+    }
+    /* grid */
+    #pic-2{
+        width: 36vw;
+        height: 36vh;
+    }
+    #button-2{
+    top: -1rem;
+    align-self: center;
+    /* right:-rem; */
+    /* width: 900%; */
+    }
+    
+    #priceText{
+    margin-top:-4.8rem;
+    margin-left: 6rem;
+    align-items: end;
+    
+    }
+    #nameText{
+        margin-top:-4.65rem;
+    text-align: start;
+    }
+    
+    
+

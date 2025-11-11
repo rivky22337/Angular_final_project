@@ -1,0 +1,40 @@
+<div id="container" class="page-container">
+    <div class="card">
+        <h2 class="card-title">Register</h2>
+        <form #frm="ngForm" (ngSubmit)="onSubmit(frm)" class="form">
+            <div class="form-group">
+                <input pInputText type="text" id="name" class="form-input" placeholder="name" name="name" [(ngModel)]="user.name"
+                    #nameModel="ngModel" required/>
+                <div *ngIf="nameModel.invalid && nameModel.touched" class="error">
+                    <small *ngIf="nameModel.errors?.['required']">Username is requierd.</small>
+                    <div *ngIf="nameModel.errors?.['duplicate']">duplicate user.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <p-password [(ngModel)]="user.password" type="password" id="password"
+                    placeholder="password" #passwordModel="ngModel" required name="Password" [toggleMask]="true" />
+                <div *ngIf="passwordModel.invalid && passwordModel.touched" class="error">
+                    <small *ngIf="passwordModel.errors?.['required']">Password is required.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <input pInputText type="email" id="email" class="form-input" name="email" [(ngModel)]="user.email"
+                    #emailModel="ngModel" required placeholder="email" />
+                <div *ngIf="emailModel.invalid && emailModel.touched" class="error">
+                    <small *ngIf="emailModel.errors?.['required']">Email is required.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input pInputText type="text" id="address" pInputText class="form-input" name="address" [(ngModel)]="user.address"
+                    #addressModel="ngModel" required placeholder="Address" />
+                <div *ngIf="addressModel.invalid && addressModel.touched" class="error">
+                    <small *ngIf="addressModel.errors?.['required']">Address is required.</small>
+                </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</div>
+
+

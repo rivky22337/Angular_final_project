@@ -1,0 +1,21 @@
+.container {
+    position: relative; /* מגדיר מיקום יחסי למיכל */
+    width: 100%; /* מתאים לגודל התמונה */
+    text-align: center; /* ממרכז תוכן בתוך המיכל */
+}
+
+#pic {
+    width: 100%; /* התמונה מותאמת לגודל המיכל */
+    display: block;
+}
+
+#btn {
+    position: absolute; /* מאפשר מיקום מעל התמונה */
+    top: 60%; /* מרכז הכפתור אנכית */
+    left: 50%; /* מרכז הכפתור אופקית */
+    transform: translate(-50%, -30%); /* מתקן את המיקום כך שהמרכז הוא נקודת האמצע של הכפתור */
+    z-index: 1; /* מבטיח שהכפתור יהיה מעל התמונה */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    /* background-color: #007bff; */
+}

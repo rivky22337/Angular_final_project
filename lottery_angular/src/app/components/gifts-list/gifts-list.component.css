@@ -1,0 +1,19 @@
+.form-control {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* הגדרת פונט דק */
+}
+
+.form-control:focus {
+    border-color: black; 
+    outline: none;
+}
+
+.form-control option {
+    padding: 0.5rem;
+}

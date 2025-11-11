@@ -1,0 +1,131 @@
+/* כללי לעמוד */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* מרכז ה-container */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 100px;
+  /* ריווח פנימי למסכים קטנים */
+}
+
+/* עיצוב ה-card */
+.card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* כותרת ה-card */
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
+/* עיצוב הטופס */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* ריווח מאוזן בין האלמנטים */
+}
+
+/* עיצוב קבוצות שדה */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* עיצוב תוויות */
+label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* עיצוב שדות הקלט */
+.form-input {
+  /* padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px; */
+}
+
+/* עיצוב תיבת סימון */
+.form-checkbox {
+  display: flex;
+  color: #ccc;
+  align-items: left;
+  gap: 9px;
+  /* מרווח בין ה-checkbox לכיתוב */
+}
+
+.form-checkbox input {
+  /* align-items: left; */
+}
+
+.accept {
+  margin: 2.5%;
+  accent-color: #C026D3;
+  /* color: #ccc; */
+  background-color: #C026D3;
+
+}
+.error{
+  margin: 2.5%; 
+}
+.btn {
+  background-color: #C026D3;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #A21CAF;
+    /* ירוק כהה יותר */
+}
+
+/* רספונסיביות למסכים קטנים */
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+    /* ריווח קטן יותר למסכים קטנים */
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .form-input {
+    /* font-size: 13px;
+    padding: 8px; */
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}

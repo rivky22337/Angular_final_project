@@ -1,0 +1,45 @@
+
+
+ <p-table [value]="giftsInStock" [tableStyle]="{ 'min-width': '60rem' }">
+    <ng-template #caption>
+        <div class="flex items-center justify-between" id="title">
+            <span class="text-xl font-bold" >Shopping Cart</span>
+        </div>
+    </ng-template>
+    <ng-template #header>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-gift>
+        <tr>
+            <td>{{ gift.gift.name }}</td>
+            <td>
+                <img id="img"
+                    [src]=" gift.gift.imageUrl"
+                    class="w-24 rounded"
+                />
+            </td>
+            <td>{{ gift.gift.price | currency: 'ILS' }}</td>
+            <td class="card flex justify-center">
+                <p-inputnumber [(ngModel)]="gift.quantity" [showButtons]="true"
+                    buttonLayout="vertical" spinnerMode="vertical" inputId="vertical"
+                    [inputStyle]="{ width: '3rem' }">
+                        <ng-template #incrementbuttonicon >
+                        <span class="pi pi-plus" (click)="plus(gift)" style="width: 2.9rem"></span>
+                        </ng-template>
+
+                    <ng-template #decrementbuttonicon >
+                        <span class="pi pi-minus" (click)="minus(gift)" style="width: 2.9rem;"></span>
+                    </ng-template>
+                </p-inputnumber>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template #footer> In total there are {{ giftsInStock ? giftsInStock.length : 0 }} products. </ng-template>
+</p-table>
+<div id="sum" >total sum:{{totalSum}}</div>
+<p-button label="CheckOut" icon="pi pi-check"  (click)="payment('/payment')" />

@@ -1,0 +1,15 @@
+#img{
+    width: 8rem;
+    height: 9rem;
+}
+#title{
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+}
+#sum{
+    font-size: x-large;
+    font-weight: bolder;
+    margin-right: 26rem;
+    text-align: right;
+}
